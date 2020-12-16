@@ -1,17 +1,18 @@
 version: '3.7'
 
 services:
-  db:
+  ct-db:
     image: mysql:8.0
+    env_file: .env
     environment:
-    - MYSQL_ROOT_PASSWORD=password
-    - MYSQL_USER=testuser
-    - MYSQL_PASSWORD=password
-    - MYSQL_DATABASE=coronavirus_tracker
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      MYSQL_DATABASE:
     volumes:
-      - data:/var/lib/mysql
+      - ct-data:/var/lib/mysql
     ports:
       - 3306:3306
       
 volumes:
-  data: {}
+  ct-data: {}
