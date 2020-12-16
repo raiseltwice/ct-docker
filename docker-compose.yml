@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_USER=testuser
+    - MYSQL_PASSWORD=password
+    - MYSQL_DATABASE=coronavirus_tracker
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - 3306:3306
+      
+volumes:
+  data: {}
