@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  ct-db:
+    image: mysql:8.0
+    env_file: 
+      - local-mysql.env
+    volumes:
+      - ct-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+      
+volumes:
+  ct-data: {}
