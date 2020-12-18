@@ -3,12 +3,8 @@ version: '3.7'
 services:
   ct-db:
     image: mysql:8.0
-    env_file: .env
-    environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_USER:
-      MYSQL_PASSWORD:
-      MYSQL_DATABASE:
+    env_file: 
+      - local-mysql.env
     volumes:
       - ct-data:/var/lib/mysql
     ports:
